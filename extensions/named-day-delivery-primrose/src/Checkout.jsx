@@ -78,7 +78,7 @@ export default function Extension() {
 // Function to compute if Express or Shipx Standard Shipping 19.99 is selected in any of the delivery groups
 const titleArray =[ "Standard named day delivery"]
 console.log("title of the selected ", deliveryGroups)
-const isExpressSelected = () => {
+const isNamedDaySelected = () => {
   const expressHandles = new Set(
       deliveryGroups
         .flatMap(({ deliveryOptions }) =>
@@ -116,8 +116,8 @@ const isExpressSelected = () => {
 
 
   // Render the extension components 
-  // return isExpressSelected() && isPostCodeTrue() && hasCommonItem == false ? (
-  return (
+  // return isNamedDaySelected() && isPostCodeTrue() && hasCommonItem == false ? (
+  return isNamedDaySelected()? (
     <>
       <Heading>Select a date for delivery</Heading>
       <DatePicker
@@ -126,7 +126,7 @@ const isExpressSelected = () => {
         disabled={["Sunday", { end: yesterday }]}
       />
     </>
-  ) 
+  ) : null;
 }
 
 const formatDate = (date) => {
