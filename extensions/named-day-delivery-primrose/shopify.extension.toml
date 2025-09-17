@@ -17,8 +17,8 @@ uid = "c3b6643e-7659-3a78-6022-d1db87001f3a9287bca9"
 
 [[extensions.targeting]]
 module = "./src/Checkout.jsx"
-target = "purchase.checkout.block.render"
-export = "purchaseCheckoutShippingOptionListRenderAfter"
+target = "purchase.checkout.shipping-option-list.render-after"
+#export = "purchaseCheckoutShippingOptionListRenderAfter"
 
 [extensions.capabilities]
 # Gives your extension access to directly query Shopify’s storefront API.
